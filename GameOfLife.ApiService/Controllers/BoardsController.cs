@@ -42,6 +42,7 @@ namespace GameOfLife.ApiService.Controllers
       return await _boardService.GetAllBoards();
     }
 
+    // GET: api/Boards/5
     [HttpGet("{id}")]
     public async Task<ActionResult<Board>> GetBoard(Guid id)
     {
