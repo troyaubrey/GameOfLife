@@ -39,7 +39,7 @@ namespace GameOfLife.ApiService.Controllers
     [HttpGet]
     public async Task<ActionResult<IEnumerable<Board>>> GetBoards()
     {
-      return await _boardService.GetAllBoards();
+      return Ok(await _boardService.GetAllBoards());
     }
 
     // GET: api/Boards/5
@@ -53,7 +53,7 @@ namespace GameOfLife.ApiService.Controllers
         return NotFound();
       }
 
-      return board;
+      return Ok(board);
     }
 
     // GET: api/Boards/5/next
@@ -67,7 +67,7 @@ namespace GameOfLife.ApiService.Controllers
         return NotFound();
       }
 
-      return board;
+      return Ok(board);
     }
 
     // GET: api/Boards/5/future/20
@@ -81,7 +81,7 @@ namespace GameOfLife.ApiService.Controllers
         return NotFound();
       }
 
-      return board;
+      return Ok(board);
     }
 
     //GET: api/Boards/5/final
@@ -105,7 +105,7 @@ namespace GameOfLife.ApiService.Controllers
         });
       }
 
-      return board;
+      return Ok(board);
     }
   }
 }
